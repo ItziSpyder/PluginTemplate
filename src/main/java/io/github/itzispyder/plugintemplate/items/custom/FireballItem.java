@@ -3,7 +3,6 @@ package io.github.itzispyder.plugintemplate.items.custom;
 import io.github.itzispyder.pdk.plugin.builders.ItemBuilder;
 import io.github.itzispyder.pdk.plugin.items.CustomItem;
 import io.github.itzispyder.pdk.utils.raytracers.BlockDisplayRaytracer;
-import io.github.itzispyder.plugintemplate.PluginTemplate;
 import org.bukkit.Material;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
@@ -29,7 +28,7 @@ public class FireballItem extends CustomItem {
         e.setCancelled(true);
         item.setAmount(item.getAmount() - 1);
 
-        BlockDisplayRaytracer.trace(PluginTemplate.class, Material.ORANGE_CONCRETE, player.getEyeLocation(), player.getLocation().getDirection(), 0.05, 128, 20);
+        BlockDisplayRaytracer.trace(Material.ORANGE_CONCRETE, player.getEyeLocation(), player.getLocation().getDirection(), 0.05, 128, 20);
         player.getWorld().spawn(player.getEyeLocation(), Fireball.class, fireball -> {
             fireball.setVelocity(player.getLocation().getDirection().normalize().multiply(0.1));
             fireball.setShooter(player);

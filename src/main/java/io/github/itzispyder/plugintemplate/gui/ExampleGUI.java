@@ -2,7 +2,6 @@ package io.github.itzispyder.plugintemplate.gui;
 
 import io.github.itzispyder.pdk.plugin.gui.CustomGui;
 import io.github.itzispyder.pdk.utils.ServerUtils;
-import io.github.itzispyder.plugintemplate.PluginTemplate;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -17,7 +16,7 @@ public class ExampleGUI {
                 e.setCancelled(true);
             })
             .define(11, new ItemStack(Material.BARRIER), e -> {
-                ServerUtils.dispatchf(PluginTemplate.class,"kill %s", e.getWhoClicked().getUniqueId());
+                ServerUtils.dispatchf("kill %s", e.getWhoClicked().getUniqueId());
             })
             .define(13, new ItemStack(Material.GREEN_WOOL), e -> {
                 e.getWhoClicked().sendMessage("EeeeeEEE");

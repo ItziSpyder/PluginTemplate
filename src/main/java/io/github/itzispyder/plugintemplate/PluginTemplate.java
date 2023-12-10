@@ -27,7 +27,7 @@ public final class PluginTemplate extends JavaPlugin {
     }
 
     public void initCommands() { // don't forget to add commands to src/main/resources/plugin.yml!
-        new ExampleCommand().register(PluginTemplate.class);
+        new ExampleCommand().register();
     }
 
     public void initItems() {
@@ -35,7 +35,7 @@ public final class PluginTemplate extends JavaPlugin {
     }
 
     public void initListeners() {
-        new ExampleListener().register(PluginTemplate.class);
+        new ExampleListener().register();
     }
 
     public void initConfig() {
