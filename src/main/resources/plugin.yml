@@ -1,0 +1,9 @@
+name: PluginTemplate
+version: '${version}'
+main: io.github.itzispyder.plugintemplate.PluginTemplate
+api-version: 1.20
+authors: [ You ]
+description: A template
+commands:
+  example:
+    description: An example command
