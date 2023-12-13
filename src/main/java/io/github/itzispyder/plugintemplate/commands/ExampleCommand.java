@@ -16,7 +16,7 @@ public class ExampleCommand implements CustomCommand {
 
     @Override
     public void dispatchCommand(CommandSender sender, Args args) {
-        switch (args.get(0).stringValue()) {
+        switch (args.get(0).toString()) {
             case "gui" -> {
                 ExampleGUI.openFor((Player) sender);
             }
