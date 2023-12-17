@@ -24,7 +24,7 @@ public class ExampleCommand implements CustomCommand {
                 info(sender, "&aHello!");
             }
             case "fireball" -> {
-                ((Player) sender).getInventory().addItem(CustomItem.get(FireballItem.class).getItem());
+                ((Player) sender).getInventory().addItem(CustomItem.getItemByClass(FireballItem.class).getItem());
             }
         }
     }

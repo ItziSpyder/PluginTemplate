@@ -2,6 +2,7 @@ package io.github.itzispyder.plugintemplate.items.custom;
 
 import io.github.itzispyder.pdk.plugin.builders.ItemBuilder;
 import io.github.itzispyder.pdk.plugin.items.CustomItem;
+import io.github.itzispyder.pdk.plugin.items.ItemRegistry;
 import io.github.itzispyder.pdk.utils.raytracers.BlockDisplayRaytracer;
 import org.bukkit.Material;
 import org.bukkit.entity.Fireball;
@@ -10,17 +11,18 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class FireballItem extends CustomItem {
+@ItemRegistry("fireball")
+public class FireballItem implements CustomItem {
 
-    public FireballItem() {
-        super("fireball");
-    }
+    public static final ItemStack ITEM = ItemBuilder.create()
+            .material(Material.FIRE_CHARGE)
+            .name("&6Fireball")
+            .lore("&7- Right click to shoot")
+            .build();
 
     @Override
-    public void buildItem(ItemBuilder b) {
-        b.material(Material.FIRE_CHARGE);
-        b.name("&6Fireball");
-        b.lore("&7- Right click to shoot");
+    public ItemStack getItem() {
+        return ITEM;
     }
 
     @Override
